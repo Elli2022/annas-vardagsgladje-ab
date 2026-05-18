@@ -1,20 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
 import { contact } from "@/lib/site-data";
 
 export default function ThankYouPage() {
   return (
     <div className="min-h-screen bg-background px-6 py-10 text-[#2f3a34] md:px-10 md:py-14">
       <main className="mx-auto max-w-3xl rounded-3xl bg-white p-8 text-center shadow-sm md:p-12">
-        <span className="logo-surface mx-auto inline-flex rounded-3xl p-1">
-          <Image
-            src="/logo.png"
-            alt="Annas VardagsGlädje AB"
-            width={100}
-            height={100}
-            className="h-24 w-24"
-          />
-        </span>
+        <BrandLogo size="xl" surfaceClassName="bg-white" className="mx-auto" />
         <span className="mt-6 inline-flex rounded-full bg-[#eef4ef] px-4 py-1 text-sm font-medium text-[#5a7560]">
           Tack för din förfrågan
         </span>

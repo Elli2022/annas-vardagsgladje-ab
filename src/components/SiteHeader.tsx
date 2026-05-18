@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
 import { navItems } from "@/lib/site-data";
 
 export function SiteHeader() {
@@ -7,15 +7,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-[#e0e0e0] bg-background/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 md:px-10">
         <Link href="/" className="flex items-center gap-3">
-          <span className="logo-surface inline-flex rounded-2xl p-0.5">
-            <Image
-              src="/logo.png"
-              alt="Annas VardagsGlädje AB"
-              width={56}
-              height={56}
-              className="h-12 w-12 md:h-14 md:w-14"
-            />
-          </span>
+          <BrandLogo size="sm" priority />
           <span className="hidden text-sm font-medium text-[#3f4a44] sm:block">
             Annas VardagsGlädje AB
           </span>

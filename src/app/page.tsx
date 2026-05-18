@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BrandLogo } from "@/components/BrandLogo";
 import { ContactForm } from "@/components/ContactForm";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -20,16 +21,7 @@ export default function Home() {
         <section className="border-b border-[#e0e0e0] bg-background">
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-14 md:grid-cols-2 md:px-10 md:py-20">
             <div className="space-y-6">
-              <span className="logo-surface inline-flex rounded-3xl p-1">
-                <Image
-                  src="/logo.png"
-                  alt="Annas VardagsGlädje AB"
-                  width={140}
-                  height={140}
-                  className="h-28 w-28 md:h-36 md:w-36"
-                  priority
-                />
-              </span>
+              <BrandLogo size="md" priority />
               <div className="space-y-4">
                 <p className="inline-flex rounded-full bg-[#eef4ef] px-4 py-1 text-sm font-medium text-[#5a7560]">
                   Sällskap och ledsagning i Skåne
@@ -207,15 +199,11 @@ export default function Home() {
               </p>
             </div>
             <div className="flex items-center justify-center">
-              <span className="logo-surface inline-flex rounded-3xl p-2">
-                <Image
-                  src="/logo.png"
-                  alt="Annas VardagsGlädje AB logotyp"
-                  width={280}
-                  height={280}
-                  className="h-56 w-56 md:h-72 md:w-72"
-                />
-              </span>
+              <BrandLogo
+                size="lg"
+                surfaceClassName="bg-[#f3eee8]"
+                alt="Annas VardagsGlädje AB logotyp"
+              />
             </div>
           </div>
         </section>
