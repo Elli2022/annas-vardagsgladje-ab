@@ -15,9 +15,18 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://annas-vardagsgladje-ab.netlify.app"),
   title: "Annas VardagsGlädje AB | Sällskap och ledsagning i Skåne",
   description:
     "Tryggt sällskap, ledsagning och vardagsglädje för äldre i Skåne. Utomhus- och inomhusaktiviteter utifrån dina önskemål.",
+  openGraph: {
+    title: "Annas VardagsGlädje AB",
+    description:
+      "Tryggt sällskap, ledsagning och vardagsglädje för äldre i Skåne.",
+    images: ["/og-image.png"],
+    locale: "sv_SE",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

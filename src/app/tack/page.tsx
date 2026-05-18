@@ -7,7 +7,7 @@ export default function ThankYouPage() {
     <div className="min-h-screen bg-[#faf7f4] px-6 py-10 text-[#2f3a34] md:px-10 md:py-14">
       <main className="mx-auto max-w-3xl rounded-3xl bg-white p-8 text-center shadow-sm md:p-12">
         <Image
-          src="/logo.svg"
+          src="/logo.png"
           alt="Annas VardagsGlädje AB"
           width={100}
           height={100}

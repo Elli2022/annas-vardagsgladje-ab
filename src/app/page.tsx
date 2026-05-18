@@ -21,7 +21,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-14 md:grid-cols-2 md:px-10 md:py-20">
             <div className="space-y-6">
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Annas VardagsGlädje AB"
                 width={140}
                 height={140}
@@ -206,7 +206,7 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center">
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Annas VardagsGlädje AB logotyp"
                 width={280}
                 height={280}
