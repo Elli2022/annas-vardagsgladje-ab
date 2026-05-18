@@ -59,6 +59,14 @@ npm run dev
 
 Öppna [http://localhost:3000](http://localhost:3000).
 
+## SEO
+
+- `sitemap.xml` och `robots.txt` genereras automatiskt
+- Structured data (`LocalBusiness`) via JSON-LD på startsidan
+- Uppdatera `NEXT_PUBLIC_SITE_URL` i Netlify när egen domän kopplas (se `.env.example`)
+
+Efter lansering: registrera sidan i [Google Search Console](https://search.google.com/search-console) och skapa en **Google Business Profile** för bäst lokal synlighet.
+
 ## Deploy
 
 Sidan deployas automatiskt till Netlify vid push till `main`, eller manuellt:

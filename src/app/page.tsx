@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BrandLogo } from "@/components/BrandLogo";
 import { ContactForm } from "@/components/ContactForm";
+import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import {
@@ -14,6 +15,7 @@ import sallyImage from "../../public/sally.jpg";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-[#2f3a34]">
+      <JsonLd />
       <SiteHeader />
 
       <main>
@@ -27,11 +29,13 @@ export default function Home() {
                   Sällskap och ledsagning i Skåne
                 </p>
                 <h1 className="section-title text-4xl font-semibold leading-tight text-[#2f3a34] md:text-5xl">
-                  Vardagsglädje med trygg närvaro
+                  Tryggt sällskap och ledsagning för äldre i Skåne
                 </h1>
                 <p className="text-lg leading-relaxed text-[#5a6a62]">
-                  Vi erbjuder personligt sällskap och enkla aktiviteter för dig
-                  som vill ha mer glädje, gemenskap och trygghet i vardagen.
+                  Annas VardagsGlädje AB erbjuder personligt sällskap,
+                  ledsagning och vardagsaktiviteter i Malmö och runt om i
+                  Skåne – för dig som vill ha mer glädje, gemenskap och
+                  trygghet i vardagen.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -77,10 +81,10 @@ export default function Home() {
               title="När hemtjänsten inte räcker till – eller när du bara vill ha mer liv i vardagen"
             />
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#5a6a62]">
-              Vissa har hemtjänst men vill ha mer fokuserat sällskap en stund.
-              Andra bor hemma och önskar hjälp med enklare vardagssysslor
-              tillsammans med ett socialt utbyte. För anhöriga kan vi vara ett
-              tryggt komplement som ger lugn och avlastning.
+              Vi hjälper äldre som vill ha mer fokuserat sällskap en stund –
+              hemma, ute eller vid enklare ärenden. Tjänsten passar dig som bor
+              hemma och önskar socialt utbyte, samt anhöriga som söker trygg
+              avlastning och extra stöd utöver hemtjänst.
             </p>
           </div>
         </section>
@@ -94,8 +98,9 @@ export default function Home() {
               centered
             />
             <p className="mx-auto mt-4 max-w-2xl text-lg text-[#5a6a62]">
-              Beroende på dag och uppdrag kan vi följa med som följeslagare
-              eller sällskap där det passar dig bäst.
+              Med utgångspunkt i Malmö erbjuder vi ledsagning och sällskap i
+              hela Skåne – till exempel Lund, Helsingborg, Kristianstad och
+              närliggande orter, beroende på dag och uppdrag.
             </p>
           </div>
         </section>
@@ -134,9 +139,10 @@ export default function Home() {
               title="Sällskap, ledsagning och vardagsstöd"
             />
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[#5a6a62]">
-              Vi är inte hemtjänst – vi är ett komplement som fokuserar på
-              närvaro, aktivitet och trygghet. Du väljer tempo och innehåll,
-              vi följer med som stöd i det som känns meningsfullt för dig.
+              Vi är inte hemtjänst – vi är ett komplement med fokus på
+              sällskap för äldre, ledsagning och vardagsglädje. Du väljer tempo
+              och innehåll, vi följer med som tryggt stöd i det som känns
+              meningsfullt för dig.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {[
@@ -189,9 +195,9 @@ export default function Home() {
               <SectionHeading eyebrow="Om oss" title="Varför vi finns" />
               <p className="mt-6 leading-relaxed text-[#5a6a62]">
                 Annas VardagsGlädje AB startades med önskan om att skapa mer
-                glädje, gemenskap och meningsfulla stunder i vardagen. Vi tror
-                på ett respektfullt och lugnt sätt att mötas – där du känner dig
-                sedd, trygg och delaktig.
+                glädje, gemenskap och meningsfulla stunder i vardagen i Skåne.
+                Vi tror på ett respektfullt och lugnt sätt att mötas – där du
+                känner dig sedd, trygg och delaktig.
               </p>
               <p className="mt-4 leading-relaxed text-[#5a6a62]">
                 Vi arbetar med omtanke, tydlighet och en varm ton. Fakturering

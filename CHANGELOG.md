@@ -2,6 +2,13 @@
 
 Alla viktiga ändringar i projektet dokumenteras här enligt [Semantic Versioning](https://semver.org/).
 
+## [1.4.0] - 2026-05-18
+
+### Added
+- SEO: sitemap, robots.txt, förbättrad metadata och Open Graph
+- LocalBusiness JSON-LD structured data
+- Lokala sökord i copy (Malmö, Skåne, sällskap/ledsagning för äldre)
+
 ## [1.3.0] - 2026-05-18
 
 ### Added

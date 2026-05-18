@@ -1,9 +1,11 @@
+import { siteConfig } from "@/lib/site-config";
+
 export const contact = {
-  phone: "072-442 00 41",
-  phoneHref: "tel:+46724420041",
-  email: "anna.vardagsgladje@gmail.com",
+  phone: siteConfig.phoneDisplay,
+  phoneHref: `tel:${siteConfig.phone}`,
+  email: siteConfig.email,
   formAction: "https://formsubmit.co/anna.vardagsgladje@gmail.com",
-  thankYouUrl: "https://annas-vardagsgladje-ab.netlify.app/tack",
+  thankYouUrl: `${siteConfig.url}/tack`,
 };
 
 export const navItems = [

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
+import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -14,18 +15,55 @@ const sourceSans = Source_Sans_3({
   weight: ["400", "500", "600"],
 });
 
+const defaultTitle =
+  "Sällskap och ledsagning för äldre i Skåne | Annas VardagsGlädje AB";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://annas-vardagsgladje-ab.netlify.app"),
-  title: "Annas VardagsGlädje AB | Sällskap och ledsagning i Skåne",
-  description:
-    "Tryggt sällskap, ledsagning och vardagsglädje för äldre i Skåne. Utomhus- och inomhusaktiviteter utifrån dina önskemål.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: defaultTitle,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "health",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Annas VardagsGlädje AB",
-    description:
-      "Tryggt sällskap, ledsagning och vardagsglädje för äldre i Skåne.",
-    images: ["/og-image.png"],
-    locale: "sv_SE",
     type: "website",
+    locale: "sv_SE",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: defaultTitle,
+    description: siteConfig.description,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} – sällskap och ledsagning för äldre i Skåne`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: siteConfig.description,
+    images: ["/og-image.png"],
   },
 };
 
@@ -35,7 +73,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sv" className={`${cormorant.variable} ${sourceSans.variable} h-full antialiased`}>
+    <html
+      lang="sv"
+      className={`${cormorant.variable} ${sourceSans.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
