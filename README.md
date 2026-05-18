@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Annas VardagsGlädje AB – webbplats
 
-## Getting Started
+Landningssida för [Annas VardagsGlädje AB](https://annas-vardagsgladje-ab.netlify.app) – tryggt sällskap och ledsagning i Skåne.
 
-First, run the development server:
+## Live
+
+- **Produktion:** https://annas-vardagsgladje-ab.netlify.app
+- **GitHub:** https://github.com/Elli2022/annas-vardagsgladje-ab
+
+## Versionshantering (branschpraxis)
+
+Projektet följer **Semantic Versioning** (`MAJOR.MINOR.PATCH`):
+
+| Version | Innehåll |
+|---------|----------|
+| [v1.3.0](https://github.com/Elli2022/annas-vardagsgladje-ab/releases/tag/v1.3.0) | Matchad logga, rund favicon, release-flöde |
+| [v1.2.0](https://github.com/Elli2022/annas-vardagsgladje-ab/releases/tag/v1.2.0) | Varumärkesmapp (`brand/`) |
+| [v1.1.0](https://github.com/Elli2022/annas-vardagsgladje-ab/releases/tag/v1.1.0) | Utökad struktur + aktiviteter |
+| [v1.0.0](https://github.com/Elli2022/annas-vardagsgladje-ab/releases/tag/v1.0.0) | Första landningssidan |
+| [v0.1.0](https://github.com/Elli2022/annas-vardagsgladje-ab/releases/tag/v0.1.0) | Projektstart (Next.js) |
+
+- **Taggar:** `git tag -l` visar alla versioner
+- **Releases:** under [Releases](https://github.com/Elli2022/annas-vardagsgladje-ab/releases) på GitHub
+- **Ändringslogg:** se [CHANGELOG.md](./CHANGELOG.md)
+
+### Ny version (för utvecklare)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# 1. Gör ändringar och committa
+git add .
+git commit -m "Beskrivning av ändringen"
+
+# 2. Uppdatera CHANGELOG.md och package.json version
+
+# 3. Tagga och pusha
+git tag -a v1.4.0 -m "v1.4.0: kort beskrivning"
+git push origin main --tags
+
+# 4. Skapa GitHub Release
+gh release create v1.4.0 --title "v1.4.0" --notes "Beskrivning"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Varumärke
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Loggor och favicons finns i [`brand/`](./brand/). Se [`brand/README.md`](./brand/README.md).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Återskapa filer efter byte av originallogga:
 
-## Learn More
+```bash
+./scripts/generate-brand-assets.sh
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Utveckling lokalt
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm install
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Öppna [http://localhost:3000](http://localhost:3000).
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Sidan deployas automatiskt till Netlify vid push till `main`, eller manuellt:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npx netlify-cli deploy --prod
+```
+
+## Kontakt (företaget)
+
+- Telefon: 072-442 00 41
+- E-post: anna.vardagsgladje@gmail.com

@@ -12,22 +12,24 @@ import sallyImage from "../../public/sally.jpg";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#faf7f4] text-[#2f3a34]">
+    <div className="min-h-screen bg-background text-[#2f3a34]">
       <SiteHeader />
 
       <main>
         {/* Hero */}
-        <section className="border-b border-[#ebe3dc] bg-gradient-to-b from-white to-[#faf7f4]">
+        <section className="border-b border-[#e0e0e0] bg-background">
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-14 md:grid-cols-2 md:px-10 md:py-20">
             <div className="space-y-6">
-              <Image
-                src="/logo.png"
-                alt="Annas VardagsGlädje AB"
-                width={140}
-                height={140}
-                className="h-28 w-28 md:h-36 md:w-36"
-                priority
-              />
+              <span className="logo-surface inline-flex rounded-3xl p-1">
+                <Image
+                  src="/logo.png"
+                  alt="Annas VardagsGlädje AB"
+                  width={140}
+                  height={140}
+                  className="h-28 w-28 md:h-36 md:w-36"
+                  priority
+                />
+              </span>
               <div className="space-y-4">
                 <p className="inline-flex rounded-full bg-[#eef4ef] px-4 py-1 text-sm font-medium text-[#5a7560]">
                   Sällskap och ledsagning i Skåne
@@ -152,7 +154,7 @@ export default function Home() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl bg-[#faf7f4] p-5 text-center font-medium text-[#4a5a52]"
+                  className="rounded-2xl bg-background p-5 text-center font-medium text-[#4a5a52]"
                 >
                   {item}
                 </div>
@@ -205,13 +207,15 @@ export default function Home() {
               </p>
             </div>
             <div className="flex items-center justify-center">
-              <Image
-                src="/logo.png"
-                alt="Annas VardagsGlädje AB logotyp"
-                width={280}
-                height={280}
-                className="h-56 w-56 md:h-72 md:w-72"
-              />
+              <span className="logo-surface inline-flex rounded-3xl p-2">
+                <Image
+                  src="/logo.png"
+                  alt="Annas VardagsGlädje AB logotyp"
+                  width={280}
+                  height={280}
+                  className="h-56 w-56 md:h-72 md:w-72"
+                />
+              </span>
             </div>
           </div>
         </section>
