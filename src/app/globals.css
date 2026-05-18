@@ -1,19 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fff8f7;
-  --foreground: #2d1f21;
+  --background: #faf7f4;
+  --foreground: #2f3a34;
+  --accent-green: #6d8b72;
+  --accent-pink: #d49aaa;
+  --card: #ffffff;
+  --muted: #5a6a62;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-source-sans);
+  --font-serif: var(--font-cormorant);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family: var(--font-source-sans), "Segoe UI", Arial, sans-serif;
+}
+
+.section-title {
+  font-family: var(--font-cormorant), Georgia, serif;
 }
