@@ -33,8 +33,8 @@ export default function Home() {
                 </h1>
                 <p className="text-lg leading-relaxed text-[#5a6a62]">
                   Annas VardagsGlädje AB erbjuder personligt sällskap,
-                  ledsagning och vardagsaktiviteter i Malmö och runt om i
-                  Skåne – för dig som vill ha mer glädje, gemenskap och
+                  ledsagning och vardagsaktiviteter med utgångspunkt i Klippan
+                  och runt om i Skåne – för dig som vill ha mer glädje, gemenskap och
                   trygghet i vardagen.
                 </p>
               </div>
@@ -94,12 +94,12 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6 text-center md:px-10">
             <SectionHeading
               eyebrow="Verksamhetsområde"
-              title="Utgångsort Malmö – vi arbetar i hela Skåne"
+              title="Utgångsort Klippan – vi arbetar i hela Skåne"
               centered
             />
             <p className="mx-auto mt-4 max-w-2xl text-lg text-[#5a6a62]">
-              Med utgångspunkt i Malmö erbjuder vi ledsagning och sällskap i
-              hela Skåne – till exempel Lund, Helsingborg, Kristianstad och
+              Med utgångspunkt i Klippan erbjuder vi ledsagning och sällskap i
+              hela Skåne – till exempel Helsingborg, Ängelholm, Höör och
               närliggande orter, beroende på dag och uppdrag.
             </p>
           </div>
