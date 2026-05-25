@@ -12,11 +12,11 @@ export function JsonLd() {
         name: siteConfig.name,
         description: siteConfig.longDescription,
         url: siteConfig.url,
-        email: siteConfig.email,
         image: `${siteConfig.url}/opengraph-image`,
         logo: `${siteConfig.url}/logo.svg`,
         address: {
           "@type": "PostalAddress",
+          addressLocality: siteConfig.addressLocality,
           addressRegion: siteConfig.addressRegion,
           addressCountry: siteConfig.addressCountry,
         },
@@ -37,7 +37,7 @@ export function JsonLd() {
           "@type": "AdministrativeArea",
           name: area,
         })),
-        description: `${service} i Skåne – ${siteConfig.name}`,
+        description: `${service} i Malmö och Skåne – ${siteConfig.name}`,
       })),
       {
         "@type": "WebSite",

@@ -3,7 +3,10 @@ type LogoMarkProps = {
   title?: string;
 };
 
-/** Varm logomark: hjärta och blad i omsorgsgrönt */
+/**
+ * Logomark: grön cirkel (trygghet/natur), cream (vardag), rosa hjärta (omtanke),
+ * grönt hjärta inuti (meningsfull närvaro), mjuka “blad” nedtill (växande gemenskap).
+ */
 export function LogoMark({ className = "h-full w-full", title }: LogoMarkProps) {
   return (
     <svg

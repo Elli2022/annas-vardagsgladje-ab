@@ -1,5 +1,4 @@
 import { siteConfig } from "@/lib/site-config";
-import { contact } from "@/lib/site-data";
 
 export function SiteFooter() {
   return (
@@ -9,9 +8,8 @@ export function SiteFooter() {
           Trygg närvaro, mänsklig värme och tid för det som betyder mest.
         </p>
         <p className="mt-2">
-          E-post:{" "}
-          <a href={`mailto:${contact.email}`} className="underline decoration-[var(--accent-warm)]">
-            {contact.email}
+          <a href="#kontakt" className="underline decoration-[var(--accent-pink)]">
+            Kontakta oss via formuläret
           </a>
         </p>
         <p className="mt-4 text-xs text-[#7a8a82]">

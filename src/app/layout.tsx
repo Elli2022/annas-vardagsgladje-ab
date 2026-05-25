@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   other: {
     "geo.region": "SE-M",
-    "geo.placename": "Skåne",
+    "geo.placename": "Malmö",
   },
 };
 

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
 import { siteConfig } from "@/lib/site-config";
-import { contact } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Tack för din förfrågan",
@@ -15,9 +14,9 @@ export const metadata: Metadata = {
 export default function ThankYouPage() {
   return (
     <div className="min-h-screen bg-background px-6 py-10 text-[#2f3a34] md:px-10 md:py-14">
-      <main className="mx-auto max-w-3xl rounded-3xl bg-white p-8 text-center shadow-sm md:p-12">
+      <main className="mx-auto max-w-3xl rounded-3xl bg-white p-8 text-center shadow-sm ring-1 ring-[var(--accent-pink)]/20 md:p-12">
         <BrandLogo size="xl" className="mx-auto" />
-        <span className="mt-6 inline-flex rounded-full bg-[#eef4ef] px-4 py-1 text-sm font-medium text-[#5a7560]">
+        <span className="mt-6 inline-flex rounded-full bg-[var(--background-sage)] px-4 py-1 text-sm font-medium text-[var(--accent-green-dark)]">
           Tack för din förfrågan
         </span>
         <h1 className="section-title mt-4 text-3xl font-semibold md:text-4xl">
@@ -27,16 +26,9 @@ export default function ThankYouPage() {
           Tack för att du kontaktade {siteConfig.name}. Vi hör av oss så snart vi
           kan.
         </p>
-        <p className="mt-2 text-[#5a6a62]">
-          Vid brådskande ärende kan du mejla{" "}
-          <a href={`mailto:${contact.email}`} className="font-medium underline">
-            {contact.email}
-          </a>
-          .
-        </p>
         <Link
           href="/"
-          className="mt-8 inline-flex rounded-full bg-[#6d8b72] px-6 py-3 font-medium text-white transition hover:bg-[#5a7560]"
+          className="mt-8 inline-flex rounded-full bg-[var(--accent-green)] px-6 py-3 font-medium text-white transition hover:bg-[var(--accent-green-dark)]"
         >
           Tillbaka till startsidan
         </Link>

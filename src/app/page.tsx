@@ -5,12 +5,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { siteConfig } from "@/lib/site-config";
-import {
-  contact,
-  indoorActivities,
-  outdoorActivities,
-  steps,
-} from "@/lib/site-data";
+import { indoorActivities, outdoorActivities, steps } from "@/lib/site-data";
 import sallyImage from "../../public/sally.jpg";
 
 export default function Home() {
@@ -33,8 +28,8 @@ export default function Home() {
                 </h1>
                 <p className="text-lg leading-relaxed text-[#5a6a62]">
                   {siteConfig.name} erbjuder personligt sällskap, ledsagning och
-                  vardagsaktiviteter i hela Skåne – för dig som vill ha mer glädje,
-                  gemenskap och trygghet i vardagen.
+                  vardagsaktiviteter med utgångspunkt i Malmö och runt om i Skåne –
+                  för dig som vill ha mer glädje, gemenskap och trygghet i vardagen.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -43,12 +38,6 @@ export default function Home() {
                   className="rounded-full bg-[var(--accent-green)] px-6 py-3 font-medium text-white shadow-sm transition hover:bg-[var(--accent-green-dark)]"
                 >
                   Skicka förfrågan
-                </a>
-                <a
-                  href={`mailto:${contact.email}`}
-                  className="rounded-full border border-[var(--accent-warm)] bg-white/80 px-6 py-3 font-medium text-[#4a5a52] transition hover:bg-[var(--accent-cream)]"
-                >
-                  Mejla oss
                 </a>
               </div>
             </div>
@@ -92,13 +81,13 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6 text-center md:px-10">
             <SectionHeading
               eyebrow="Verksamhetsområde"
-              title="Vi arbetar i hela Skåne"
+              title="Utgångsort Malmö – vi arbetar i hela Skåne"
               centered
             />
             <p className="mx-auto mt-4 max-w-2xl text-lg text-[#5a6a62]">
-              Vi erbjuder ledsagning och sällskap i Skåne – till exempel
-              Helsingborg, Lund, Ängelholm och närliggande orter, beroende på dag
-              och uppdrag.
+              Med utgångspunkt i Malmö erbjuder vi ledsagning och sällskap i hela
+              Skåne – till exempel Lund, Helsingborg, Landskrona och närliggande
+              orter, beroende på dag och uppdrag.
             </p>
           </div>
         </section>
@@ -113,9 +102,19 @@ export default function Home() {
               {steps.map((step, index) => (
                 <article
                   key={step.title}
-                  className="rounded-2xl border border-[#e8ddd6] bg-white p-6 shadow-sm"
+                  className={`rounded-2xl border bg-white p-6 shadow-sm ${
+                    index === 1
+                      ? "border-[var(--accent-pink)]/50 ring-2 ring-[var(--accent-pink)]/20"
+                      : "border-[var(--border-warm)] ring-1 ring-[var(--accent-pink)]/10"
+                  }`}
                 >
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#eef4ef] text-sm font-semibold text-[#5a7560]">
+                  <span
+                    className={`inline-flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold ${
+                      index === 1
+                        ? "bg-[var(--accent-pink)]/25 text-[#8a5a68]"
+                        : "bg-[var(--background-sage)] text-[var(--accent-green-dark)]"
+                    }`}
+                  >
                     {index + 1}
                   </span>
                   <h3 className="section-title mt-4 text-2xl font-semibold text-[#2f3a34]">
@@ -145,10 +144,14 @@ export default function Home() {
                 "Personligt sällskap hemma",
                 "Ledsagning till ärenden och aktiviteter",
                 "Enkla vardagsuppgifter tillsammans",
-              ].map((item) => (
+              ].map((item, index) => (
                 <div
                   key={item}
-                  className="rounded-2xl bg-background p-5 text-center font-medium text-[#4a5a52]"
+                  className={`rounded-2xl bg-background p-5 text-center font-medium text-[#4a5a52] ${
+                    index === 1
+                      ? "ring-2 ring-[var(--accent-pink)]/30"
+                      : "ring-1 ring-[var(--accent-pink)]/15"
+                  }`}
                 >
                   {item}
                 </div>
@@ -184,22 +187,33 @@ export default function Home() {
         </section>
 
         <section id="om-oss" className="bg-[var(--accent-cream)] py-16 md:py-20">
-          <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2 md:px-10">
+          <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2 md:items-center md:px-10">
             <div>
               <SectionHeading eyebrow="Om oss" title="Varför vi finns" />
               <p className="mt-6 leading-relaxed text-[#5a6a62]">
                 {siteConfig.name} finns för att skapa mer glädje, gemenskap och
-                meningsfulla stunder i vardagen i Skåne. Vi tror på ett
-                respektfullt och lugnt sätt att mötas – där du känner dig sedd,
-                trygg och delaktig.
+                meningsfulla stunder i vardagen – med utgångspunkt i Malmö och
+                uppdrag i hela Skåne. Vi tror på ett respektfullt och lugnt sätt
+                att mötas – där du känner dig sedd, trygg och delaktig.
               </p>
               <p className="mt-4 leading-relaxed text-[#5a6a62]">
                 Vi arbetar med omtanke, tydlighet och en varm ton. Fakturering
                 sker månadsvis och RUT-avdrag hanteras i samband med det.
               </p>
             </div>
-            <div className="flex items-center justify-center">
-              <BrandLogo size="lg" />
+            <div className="overflow-hidden rounded-3xl bg-white p-3 shadow-md ring-2 ring-[var(--accent-pink)]/25">
+              <div className="overflow-hidden rounded-2xl">
+                <Image
+                  src={sallyImage}
+                  alt="Varm följeslagare – trygghet och glädje i vardagen"
+                  sizes="(max-width: 768px) 100vw, 45vw"
+                  quality={85}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+              <p className="mt-3 text-center text-sm text-[#6a7a72]">
+                Närhet och värme i varje möte – stora som små stunder.
+              </p>
             </div>
           </div>
         </section>
@@ -209,19 +223,11 @@ export default function Home() {
             <div>
               <SectionHeading eyebrow="Kontakt" title="Hör av dig – vi återkommer snart" />
               <p className="mt-4 leading-relaxed text-[#5a6a62]">
-                Fyll i formuläret så hör vi av oss för ett första samtal. Du kan
-                också mejla direkt.
+                Fyll i formuläret så hör vi av oss för ett första samtal. Vi
+                återkommer så snart vi kan.
               </p>
-              <ul className="mt-6 space-y-3 text-[#4a5a52]">
-                <li>
-                  E-post:{" "}
-                  <a href={`mailto:${contact.email}`} className="font-medium underline">
-                    {contact.email}
-                  </a>
-                </li>
-              </ul>
             </div>
-            <div className="rounded-3xl border border-[#e8ddd6] bg-white p-8 shadow-sm">
+            <div className="rounded-3xl border border-[var(--border-warm)] bg-white p-8 shadow-sm ring-2 ring-[var(--accent-pink)]/15">
               <ContactForm />
             </div>
           </div>
@@ -244,8 +250,9 @@ function SectionHeading({
 }) {
   return (
     <div className={centered ? "text-center" : undefined}>
-      <p className="text-sm font-semibold uppercase tracking-wide text-[#6d8b72]">
+      <p className="text-sm font-semibold uppercase tracking-wide text-[var(--accent-green)]">
         {eyebrow}
+        <span className="ml-2 inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent-pink)]" />
       </p>
       <h2 className="section-title mt-2 text-3xl font-semibold text-[#2f3a34] md:text-4xl">
         {title}
@@ -269,7 +276,7 @@ function ActivityCard({
       <ul className="mt-5 space-y-3">
         {items.map((item) => (
           <li key={item} className="flex items-start gap-3 text-[#5a6a62]">
-            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#6d8b72]" />
+            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--accent-pink)]" />
             <span>{item}</span>
           </li>
         ))}
