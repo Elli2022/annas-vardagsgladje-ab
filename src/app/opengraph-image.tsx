@@ -16,44 +16,61 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "#ebebeb",
-          padding: 48,
+          background: "linear-gradient(135deg, #f7f0e8 0%, #faf6f0 50%, #eef4ef 100%)",
+          padding: 64,
         }}
       >
         <div
           style={{
-            width: 120,
-            height: 120,
+            width: 140,
+            height: 140,
             borderRadius: "50%",
-            background: "#6d8b72",
+            background: "#5f8168",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            color: "white",
-            fontSize: 48,
-            fontWeight: 700,
-            marginBottom: 32,
+            marginBottom: 36,
+            boxShadow: "0 8px 32px rgba(95, 129, 104, 0.25)",
           }}
         >
-          TV
+          <div
+            style={{
+              width: 108,
+              height: 108,
+              borderRadius: "50%",
+              background: "#f7f0e8",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div
+              style={{
+                width: 36,
+                height: 36,
+                background: "#d49aaa",
+                borderRadius: "50%",
+              }}
+            />
+          </div>
         </div>
         <div
           style={{
-            fontSize: 52,
+            fontSize: 56,
             fontWeight: 600,
             color: "#2f3a34",
             textAlign: "center",
-            maxWidth: 900,
           }}
         >
           {siteConfig.name}
         </div>
         <div
           style={{
-            fontSize: 28,
+            fontSize: 30,
             color: "#5a6a62",
             marginTop: 16,
             textAlign: "center",
+            maxWidth: 800,
           }}
         >
           Sällskap och ledsagning för äldre i Skåne

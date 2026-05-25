@@ -1,6 +1,6 @@
 {
   "name": "trygg-vardag-portfolio",
-  "version": "2.0.0-portfolio",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

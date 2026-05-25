@@ -2,7 +2,6 @@ import Image from "next/image";
 import { BrandLogo } from "@/components/BrandLogo";
 import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
-import { PortfolioBanner } from "@/components/PortfolioBanner";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { siteConfig } from "@/lib/site-config";
@@ -18,16 +17,15 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-[#2f3a34]">
       <JsonLd />
-      <PortfolioBanner />
       <SiteHeader />
 
       <main>
-        <section className="border-b border-[#e0e0e0] bg-background">
+        <section className="hero-gradient border-b border-[var(--border-warm)]">
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-14 md:grid-cols-2 md:px-10 md:py-20">
             <div className="space-y-6">
               <BrandLogo size="md" />
               <div className="space-y-4">
-                <p className="inline-flex rounded-full bg-[#eef4ef] px-4 py-1 text-sm font-medium text-[#5a7560]">
+                <p className="inline-flex rounded-full bg-[var(--background-sage)] px-4 py-1 text-sm font-medium text-[var(--accent-green-dark)] ring-1 ring-[var(--accent-pink)]/30">
                   Sällskap och ledsagning i Skåne
                 </p>
                 <h1 className="section-title text-4xl font-semibold leading-tight text-[#2f3a34] md:text-5xl">
@@ -42,20 +40,20 @@ export default function Home() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="#kontakt"
-                  className="rounded-full bg-[#6d8b72] px-6 py-3 font-medium text-white transition hover:bg-[#5a7560]"
+                  className="rounded-full bg-[var(--accent-green)] px-6 py-3 font-medium text-white shadow-sm transition hover:bg-[var(--accent-green-dark)]"
                 >
                   Skicka förfrågan
                 </a>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="rounded-full border border-[#c9bfb5] px-6 py-3 font-medium text-[#4a5a52] transition hover:bg-white"
+                  className="rounded-full border border-[var(--accent-warm)] bg-white/80 px-6 py-3 font-medium text-[#4a5a52] transition hover:bg-[var(--accent-cream)]"
                 >
                   Mejla oss
                 </a>
               </div>
             </div>
 
-            <div className="rounded-3xl bg-[#f3eee8] p-4">
+            <div className="rounded-3xl bg-[var(--accent-cream)] p-4 shadow-md ring-1 ring-[var(--border-warm)]">
               <div className="overflow-hidden rounded-2xl">
                 <Image
                   src={sallyImage}
@@ -75,7 +73,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="for-vem" className="py-16 md:py-20">
+        <section id="for-vem" className="section-warm py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-6 md:px-10">
             <SectionHeading
               eyebrow="För vem?"
@@ -90,7 +88,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-[#eef4ef] py-16 md:py-20">
+        <section className="section-sage py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-6 text-center md:px-10">
             <SectionHeading
               eyebrow="Verksamhetsområde"
@@ -185,7 +183,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="om-oss" className="bg-[#f3eee8] py-16 md:py-20">
+        <section id="om-oss" className="bg-[var(--accent-cream)] py-16 md:py-20">
           <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2 md:px-10">
             <div>
               <SectionHeading eyebrow="Om oss" title="Varför vi finns" />
@@ -201,7 +199,7 @@ export default function Home() {
               </p>
             </div>
             <div className="flex items-center justify-center">
-              <BrandLogo size="lg" surfaceClassName="bg-[#f3eee8] p-2" />
+              <BrandLogo size="lg" />
             </div>
           </div>
         </section>

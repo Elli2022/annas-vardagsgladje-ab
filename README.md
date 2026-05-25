@@ -1,29 +1,41 @@
-# Trygg Vardag Skåne – portfolio-demo
+# Trygg Vardag Skåne – portfolio
 
-Konceptlandningssida för sällskap och ledsagning för äldre i Skåne. Byggd som **portfolio-exempel** (Next.js 16, SEO, formulär) – inget kopplat till tidigare kundmaterial.
+Konceptlandningssida för sällskap och ledsagning för äldre i Skåne. Next.js 16, SEO, FormSubmit, varm tillgänglig design.
 
 ## Live
 
-Sätt `NEXT_PUBLIC_SITE_URL` i Netlify efter deploy. Standard: `https://trygg-vardag-portfolio.netlify.app`
+https://trygg-vardag-portfolio.netlify.app
+
+## Versionshantering
+
+Projektet följer [Semantic Versioning](https://semver.org/) och [Keep a Changelog](https://keepachangelog.com/):
+
+| Branch / tag | Innehåll |
+|--------------|----------|
+| `main` | Historik (kundprojekt v1.x) |
+| `portfolio` | Aktuell portfolio-version (**v2.0.0**) |
+| Git-taggar | `v0.1.0` … `v1.4.0` (kund), `v2.0.0` (portfolio) |
+| [Releases](https://github.com/Elli2022/trygg-vardag-portfolio/releases) | Release notes per version |
+
+```bash
+git checkout portfolio
+npm install && npm run dev
+```
 
 ## Teknik
 
 - Next.js App Router, TypeScript, Tailwind CSS v4
-- FormSubmit → `eleonora.nocentini@gmail.com`
-- Sitemap, robots, JSON-LD, Open Graph (genererade ikoner)
+- SEO: sitemap, robots, metadata, JSON-LD (LocalBusiness + Service + WebSite)
+- FormSubmit → konfigurerad portfolio-e-post
+- Genererad logotyp (SVG), OG-bild och favicon
 
-## Utveckling
+## Miljövariabler
 
 ```bash
-npm install
-npm run dev
+cp .env.example .env.local
+# NEXT_PUBLIC_SITE_URL=https://trygg-vardag-portfolio.netlify.app
 ```
-
-## Branch
-
-- `portfolio` – anonym demo för portfolio
-- `main` – historisk kundversion (arkiverad)
 
 ## Formulär
 
-Aktivera FormSubmit en gång: skicka test via kontaktformuläret och bekräfta länken i inkorgen för `eleonora.nocentini@gmail.com`.
+Skicka en testförfrågan och bekräfta FormSubmit-länken i inkorgen första gången.

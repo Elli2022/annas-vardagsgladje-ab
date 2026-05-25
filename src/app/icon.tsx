@@ -8,19 +8,35 @@ export default function Icon() {
     (
       <div
         style={{
-          fontSize: 14,
-          fontWeight: 700,
-          background: "#6d8b72",
           width: "100%",
           height: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          color: "white",
+          background: "#5f8168",
           borderRadius: "50%",
         }}
       >
-        TV
+        <div
+          style={{
+            width: 26,
+            height: 26,
+            borderRadius: "50%",
+            background: "#f7f0e8",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            style={{
+              width: 10,
+              height: 10,
+              background: "#d49aaa",
+              borderRadius: "50%",
+            }}
+          />
+        </div>
       </div>
     ),
     { ...size },

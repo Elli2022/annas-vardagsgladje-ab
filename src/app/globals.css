@@ -1,13 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  /* Matchar loggans bakgrund (#ebebeb) för sömlös visning */
-  --background: #ebebeb;
+  --background: #faf6f0;
+  --background-warm: #f3ebe3;
+  --background-sage: #eef4ef;
   --foreground: #2f3a34;
-  --accent-green: #6d8b72;
+  --accent-green: #5f8168;
+  --accent-green-dark: #4d6b54;
   --accent-pink: #d49aaa;
+  --accent-warm: #c9957a;
+  --accent-cream: #f7f0e8;
   --card: #ffffff;
   --muted: #5a6a62;
+  --border-warm: #e8ddd6;
 }
 
 @theme inline {
@@ -29,4 +34,25 @@ body {
 
 .section-title {
   font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.section-warm {
+  background: linear-gradient(
+    180deg,
+    var(--background-warm) 0%,
+    var(--background) 100%
+  );
+}
+
+.section-sage {
+  background: var(--background-sage);
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--accent-cream) 0%,
+    var(--background) 45%,
+    var(--background-sage) 100%
+  );
 }

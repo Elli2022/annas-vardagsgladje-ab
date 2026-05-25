@@ -23,39 +23,51 @@ export const metadata: Metadata = {
     default: defaultTitle,
     template: `%s | ${siteConfig.name}`,
   },
-  description: siteConfig.description,
+  description: siteConfig.longDescription,
   keywords: [...siteConfig.keywords],
-  authors: [{ name: siteConfig.name }],
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
   category: "health",
-  robots: siteConfig.isPortfolioDemo
-    ? { index: false, follow: false }
-    : {
-        index: true,
-        follow: true,
-        googleBot: {
-          index: true,
-          follow: true,
-          "max-image-preview": "large",
-          "max-snippet": -1,
-        },
-      },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
-    locale: "sv_SE",
+    locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
     title: defaultTitle,
-    description: siteConfig.description,
+    description: siteConfig.longDescription,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} – sällskap och ledsagning för äldre i Skåne`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: defaultTitle,
-    description: siteConfig.description,
+    description: siteConfig.longDescription,
+    images: ["/opengraph-image"],
+  },
+  other: {
+    "geo.region": "SE-M",
+    "geo.placename": "Skåne",
   },
 };
 

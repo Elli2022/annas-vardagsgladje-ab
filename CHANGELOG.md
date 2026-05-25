@@ -2,6 +2,18 @@
 
 Alla viktiga ändringar i projektet dokumenteras här enligt [Semantic Versioning](https://semver.org/).
 
+## [2.0.0] - 2026-05-25
+
+### Added
+
+- Portfolio-version **Trygg Vardag Skåne** (branch `portfolio`)
+- Logomark (SVG), varmare färgpalett, utökad SEO (Service-schema, geo, indexering)
+- Netlify-deploy och repoomdöpning
+
+### Removed
+
+- Kundvarumärke, portfolio-banner, `noindex`
+
 ## [2.0.0-portfolio] - 2026-05-25
 
 ### Added (branch `portfolio`)
