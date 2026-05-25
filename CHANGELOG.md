@@ -2,6 +2,18 @@
 
 Alla viktiga ändringar i projektet dokumenteras här enligt [Semantic Versioning](https://semver.org/).
 
+## [2.0.0-portfolio] - 2026-05-25
+
+### Added (branch `portfolio`)
+
+- Anonym portfolio-demo: **Trygg Vardag Skåne**
+- Kontakt/FormSubmit till portfolio-ägare, generisk logomark, dynamisk OG/favicon
+- Portfolio-banner och `noindex`
+
+### Removed
+
+- Kundlogga, telefon och Annas varumärkesfiler
+
 ## [1.4.0] - 2026-05-18
 
 ### Added
