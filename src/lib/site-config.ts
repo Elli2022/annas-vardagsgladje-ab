@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Trygg Vardag Skåne",
   url:
     process.env.NEXT_PUBLIC_SITE_URL ??
-    "https://trygg-vardag-portfolio.netlify.app",
+    "https://trygg-vardag-skane.netlify.app",
   description:
     "Tryggt sällskap, ledsagning och vardagsglädje för äldre i Malmö och Skåne. Personligt stöd för äldre och anhöriga – promenader, fika, aktiviteter och enkla ärenden.",
   longDescription:

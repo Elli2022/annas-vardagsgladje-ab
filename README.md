@@ -4,7 +4,7 @@ Konceptlandningssida för sällskap och ledsagning för äldre i Skåne. Next.js
 
 ## Live
 
-https://trygg-vardag-portfolio.netlify.app
+https://trygg-vardag-skane.netlify.app
 
 ## Kontaktformulär (viktigt – 2 min setup)
 
@@ -19,7 +19,7 @@ https://trygg-vardag-portfolio.netlify.app
 
 ### Steg 2 – lägg in i Netlify
 
-1. **https://app.netlify.com/projects/trygg-vardag-portfolio/configuration/env**
+1. **https://app.netlify.com/projects/trygg-vardag-skane/configuration/env**
 2. **Add a variable**
    - Key: `WEB3FORMS_ACCESS_KEY`
    - Value: (klistra in access key)

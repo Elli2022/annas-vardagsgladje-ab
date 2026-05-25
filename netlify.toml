@@ -3,4 +3,4 @@
 
 [build.environment]
   NODE_VERSION = "22"
-  NEXT_PUBLIC_SITE_URL = "https://trygg-vardag-portfolio.netlify.app"
+  NEXT_PUBLIC_SITE_URL = "https://trygg-vardag-skane.netlify.app"
