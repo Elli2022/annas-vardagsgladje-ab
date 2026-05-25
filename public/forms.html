@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <title>Formulär – Netlify</title>
+  </head>
+  <body>
+    <!-- Netlify läser in detta vid build för att registrera formuläret -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

@@ -1,10 +1,3 @@
-import { formRecipientEmail, siteConfig } from "@/lib/site-config";
-
-export const contact = {
-  formAction: `https://formsubmit.co/${formRecipientEmail}`,
-  thankYouUrl: `${siteConfig.url}/tack`,
-};
-
 export const navItems = [
   { label: "För vem", href: "#for-vem" },
   { label: "Tjänster", href: "#tjanster" },

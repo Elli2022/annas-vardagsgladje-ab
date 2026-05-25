@@ -1,17 +1,20 @@
-import { siteConfig } from "@/lib/site-config";
-import { contact } from "@/lib/site-data";
-
 export function ContactForm() {
   return (
-    <form action={contact.formAction} method="POST" className="space-y-4">
-      <input
-        type="hidden"
-        name="_subject"
-        value={`Ny förfrågan från ${siteConfig.name}`}
-      />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_next" value={contact.thankYouUrl} />
+    <form
+      name="contact"
+      method="POST"
+      action="/tack"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      className="space-y-4"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+
+      <p className="hidden" aria-hidden="true">
+        <label>
+          Fyll inte i detta fält: <input name="bot-field" tabIndex={-1} autoComplete="off" />
+        </label>
+      </p>
 
       <div className="space-y-2">
         <label className="block text-sm font-medium text-[#3f4a44]" htmlFor="name">
@@ -44,6 +47,7 @@ export function ContactForm() {
         </label>
         <input
           id="phone"
+          type="tel"
           name="phone"
           className="w-full rounded-xl border border-[#d9cfc6] bg-white px-4 py-3 outline-none ring-[#6d8b72] transition focus:ring-2"
         />

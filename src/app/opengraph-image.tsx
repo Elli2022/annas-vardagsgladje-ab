@@ -30,49 +30,74 @@ export default function OpenGraphImage() {
             alignItems: "center",
             justifyContent: "center",
             marginBottom: 36,
-            boxShadow: "0 8px 32px rgba(95, 129, 104, 0.25)",
           }}
         >
           <div
             style={{
-              width: 108,
-              height: 108,
+              width: 100,
+              height: 100,
               borderRadius: "50%",
               background: "#f7f0e8",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              position: "relative",
             }}
           >
             <div
               style={{
-                width: 36,
+                width: 28,
+                height: 28,
+                borderRadius: "50%",
+                background: "#e8c9a8",
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                width: 20,
                 height: 36,
                 background: "#d49aaa",
                 borderRadius: "50%",
+                top: 8,
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                width: 20,
+                height: 36,
+                background: "#d49aaa",
+                borderRadius: "50%",
+                bottom: 8,
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                width: 36,
+                height: 20,
+                background: "#d49aaa",
+                borderRadius: "50%",
+                left: 8,
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                width: 36,
+                height: 20,
+                background: "#d49aaa",
+                borderRadius: "50%",
+                right: 8,
               }}
             />
           </div>
         </div>
-        <div
-          style={{
-            fontSize: 56,
-            fontWeight: 600,
-            color: "#2f3a34",
-            textAlign: "center",
-          }}
-        >
+        <div style={{ fontSize: 56, fontWeight: 600, color: "#2f3a34" }}>
           {siteConfig.name}
         </div>
-        <div
-          style={{
-            fontSize: 30,
-            color: "#5a6a62",
-            marginTop: 16,
-            textAlign: "center",
-            maxWidth: 800,
-          }}
-        >
+        <div style={{ fontSize: 30, color: "#5a6a62", marginTop: 16 }}>
           Sällskap och ledsagning för äldre i Skåne
         </div>
       </div>

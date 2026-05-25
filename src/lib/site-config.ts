@@ -1,6 +1,3 @@
-/** Formulär-mottagare (visas inte på sidan) */
-export const formRecipientEmail = "eleonora.nocentini@gmail.com";
-
 export const siteConfig = {
   name: "Trygg Vardag Skåne",
   url:
