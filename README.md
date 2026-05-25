@@ -49,6 +49,6 @@ Skicka formuläret på live-sidan → du ska hamna på `/tack` **och** få mejl 
 ```bash
 git checkout portfolio
 cp .env.example .env.local
-# Lägg WEB3FORMS_ACCESS_KEY i .env.local
+# Lägg NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY i .env.local
 npm install && npm run dev
 ```
