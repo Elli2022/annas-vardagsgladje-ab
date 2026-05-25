@@ -1,42 +1,33 @@
-import Image from "next/image";
+import { siteConfig } from "@/lib/site-config";
 
 const sizeClasses = {
-  sm: "h-12 w-12 md:h-14 md:w-14",
-  md: "h-28 w-28 md:h-36 md:w-36",
-  lg: "h-56 w-56 md:h-72 md:w-72",
-  xl: "h-24 w-24",
+  sm: "h-12 w-12 text-lg md:h-14 md:w-14 md:text-xl",
+  md: "h-28 w-28 text-3xl md:h-36 md:w-36 md:text-4xl",
+  lg: "h-56 w-56 text-5xl md:h-72 md:w-72 md:text-6xl",
+  xl: "h-24 w-24 text-2xl",
 } as const;
 
 type BrandLogoProps = {
   size?: keyof typeof sizeClasses;
-  /** Match parent section background when logo file has a solid backdrop */
   surfaceClassName?: string;
   className?: string;
-  priority?: boolean;
   alt?: string;
 };
 
+/** Generisk logomark för portfolio-demo (inga kundfiler) */
 export function BrandLogo({
   size = "md",
   surfaceClassName = "bg-background",
   className = "",
-  priority = false,
-  alt = "Annas VardagsGlädje AB",
+  alt = `${siteConfig.name} logotyp`,
 }: BrandLogoProps) {
-  const dimension = size === "sm" ? 56 : size === "md" ? 140 : size === "lg" ? 280 : 100;
-
   return (
     <span
-      className={`inline-flex shrink-0 overflow-hidden rounded-full ${surfaceClassName} ${className}`}
+      role="img"
+      aria-label={alt}
+      className={`inline-flex shrink-0 items-center justify-center rounded-full bg-[#6d8b72] font-semibold tracking-tight text-white ${sizeClasses[size]} ${surfaceClassName} ${className}`}
     >
-      <Image
-        src="/logo.png"
-        alt={alt}
-        width={dimension}
-        height={dimension}
-        priority={priority}
-        className={`${sizeClasses[size]} object-cover`}
-      />
+      TV
     </span>
   );
 }

@@ -15,8 +15,7 @@ const sourceSans = Source_Sans_3({
   weight: ["400", "500", "600"],
 });
 
-const defaultTitle =
-  "Sällskap och ledsagning för äldre i Skåne | Annas VardagsGlädje AB";
+const defaultTitle = `Sällskap och ledsagning för äldre i Skåne | ${siteConfig.name}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -30,16 +29,18 @@ export const metadata: Metadata = {
   creator: siteConfig.name,
   publisher: siteConfig.name,
   category: "health",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  robots: siteConfig.isPortfolioDemo
+    ? { index: false, follow: false }
+    : {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
   alternates: {
     canonical: "/",
   },
@@ -50,20 +51,11 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: defaultTitle,
     description: siteConfig.description,
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: `${siteConfig.name} – sällskap och ledsagning för äldre i Skåne`,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: defaultTitle,
     description: siteConfig.description,
-    images: ["/og-image.png"],
   },
 };
 

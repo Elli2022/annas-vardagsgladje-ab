@@ -1,10 +1,8 @@
 import { siteConfig } from "@/lib/site-config";
 
 export const contact = {
-  phone: siteConfig.phoneDisplay,
-  phoneHref: `tel:${siteConfig.phone}`,
   email: siteConfig.email,
-  formAction: "https://formsubmit.co/anna.vardagsgladje@gmail.com",
+  formAction: `https://formsubmit.co/${siteConfig.email}`,
   thankYouUrl: `${siteConfig.url}/tack`,
 };
 
@@ -19,7 +17,7 @@ export const navItems = [
 export const steps = [
   {
     title: "Ta kontakt",
-    text: "Hör av dig via formuläret, telefon eller mejl och berätta kort om behov och önskemål.",
+    text: "Hör av dig via formuläret eller mejl och berätta kort om behov och önskemål.",
   },
   {
     title: "Vi planerar tillsammans",

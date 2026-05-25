@@ -1,3 +1,4 @@
+import { siteConfig } from "@/lib/site-config";
 import { contact } from "@/lib/site-data";
 
 export function SiteFooter() {
@@ -8,17 +9,14 @@ export function SiteFooter() {
           Trygg närvaro, mänsklig värme och tid för det som betyder mest.
         </p>
         <p className="mt-2">
-          Telefon:{" "}
-          <a href={contact.phoneHref} className="underline">
-            {contact.phone}
-          </a>{" "}
-          · E-post:{" "}
+          E-post:{" "}
           <a href={`mailto:${contact.email}`} className="underline">
             {contact.email}
           </a>
         </p>
         <p className="mt-4 text-xs text-[#7a8a82]">
-          © {new Date().getFullYear()} Annas VardagsGlädje AB
+          © {new Date().getFullYear()} {siteConfig.name}
+          {siteConfig.isPortfolioDemo ? " · portfolio-demo" : ""}
         </p>
       </div>
     </footer>

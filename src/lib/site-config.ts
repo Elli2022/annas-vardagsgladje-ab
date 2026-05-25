@@ -1,27 +1,27 @@
 export const siteConfig = {
-  name: "Annas VardagsGlädje AB",
+  name: "Trygg Vardag Skåne",
+  /** Portfolio-demo – inget riktigt företag */
+  isPortfolioDemo: true,
   url:
     process.env.NEXT_PUBLIC_SITE_URL ??
-    "https://annas-vardagsgladje-ab.netlify.app",
+    "https://trygg-vardag-portfolio.netlify.app",
   description:
-    "Tryggt sällskap, ledsagning och vardagsglädje för äldre i Klippan och Skåne. Personligt stöd för äldre och anhöriga – promenader, fika, aktiviteter och enkla ärenden.",
+    "Tryggt sällskap, ledsagning och vardagsglädje för äldre i Skåne. Personligt stöd för äldre och anhöriga – promenader, fika, aktiviteter och enkla ärenden.",
   keywords: [
     "sällskap för äldre",
     "ledsagning äldre",
     "vardagsglädje äldre",
-    "sällskap Klippan",
+    "sällskap Skåne",
     "ledsagning Skåne",
     "stöd för anhöriga äldre",
     "aktiviteter för äldre",
-    "Annas VardagsGlädje",
+    "Trygg Vardag Skåne",
   ],
-  email: "anna.vardagsgladje@gmail.com",
-  phone: "+46724420041",
-  phoneDisplay: "072-442 00 41",
-  addressLocality: "Klippan",
+  email: "eleonora.nocentini@gmail.com",
+  addressLocality: "Skåne",
   addressRegion: "Skåne",
   addressCountry: "SE",
-  areaServed: ["Klippan", "Skåne", "Sverige"],
+  areaServed: ["Skåne", "Sverige"],
   services: [
     "Sällskap för äldre",
     "Ledsagning",

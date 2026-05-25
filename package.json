@@ -1,6 +1,6 @@
 {
-  "name": "annas-vardagsgladje-ab",
-  "version": "1.4.0",
+  "name": "trygg-vardag-portfolio",
+  "version": "2.0.0-portfolio",
   "private": true,
   "scripts": {
     "dev": "next dev",

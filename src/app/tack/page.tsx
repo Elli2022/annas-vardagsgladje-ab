@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
+import { siteConfig } from "@/lib/site-config";
 import { contact } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -23,13 +24,13 @@ export default function ThankYouPage() {
           Vi har tagit emot ditt meddelande
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-[#5a6a62]">
-          Tack för att du kontaktade Annas VardagsGlädje AB. Vi hör av oss så
-          snart vi kan.
+          Tack för att du kontaktade {siteConfig.name}. Vi hör av oss så snart vi
+          kan.
         </p>
         <p className="mt-2 text-[#5a6a62]">
-          Vid brådskande ärende kan du ringa oss på{" "}
-          <a href={contact.phoneHref} className="font-medium underline">
-            {contact.phone}
+          Vid brådskande ärende kan du mejla{" "}
+          <a href={`mailto:${contact.email}`} className="font-medium underline">
+            {contact.email}
           </a>
           .
         </p>

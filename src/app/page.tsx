@@ -2,8 +2,10 @@ import Image from "next/image";
 import { BrandLogo } from "@/components/BrandLogo";
 import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
+import { PortfolioBanner } from "@/components/PortfolioBanner";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { siteConfig } from "@/lib/site-config";
 import {
   contact,
   indoorActivities,
@@ -16,14 +18,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-[#2f3a34]">
       <JsonLd />
+      <PortfolioBanner />
       <SiteHeader />
 
       <main>
-        {/* Hero */}
         <section className="border-b border-[#e0e0e0] bg-background">
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-14 md:grid-cols-2 md:px-10 md:py-20">
             <div className="space-y-6">
-              <BrandLogo size="md" priority />
+              <BrandLogo size="md" />
               <div className="space-y-4">
                 <p className="inline-flex rounded-full bg-[#eef4ef] px-4 py-1 text-sm font-medium text-[#5a7560]">
                   Sällskap och ledsagning i Skåne
@@ -32,10 +34,9 @@ export default function Home() {
                   Tryggt sällskap och ledsagning för äldre i Skåne
                 </h1>
                 <p className="text-lg leading-relaxed text-[#5a6a62]">
-                  Annas VardagsGlädje AB erbjuder personligt sällskap,
-                  ledsagning och vardagsaktiviteter med utgångspunkt i Klippan
-                  och runt om i Skåne – för dig som vill ha mer glädje, gemenskap och
-                  trygghet i vardagen.
+                  {siteConfig.name} erbjuder personligt sällskap, ledsagning och
+                  vardagsaktiviteter i hela Skåne – för dig som vill ha mer glädje,
+                  gemenskap och trygghet i vardagen.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -46,10 +47,10 @@ export default function Home() {
                   Skicka förfrågan
                 </a>
                 <a
-                  href={contact.phoneHref}
+                  href={`mailto:${contact.email}`}
                   className="rounded-full border border-[#c9bfb5] px-6 py-3 font-medium text-[#4a5a52] transition hover:bg-white"
                 >
-                  Ring {contact.phone}
+                  Mejla oss
                 </a>
               </div>
             </div>
@@ -58,7 +59,7 @@ export default function Home() {
               <div className="overflow-hidden rounded-2xl">
                 <Image
                   src={sallyImage}
-                  alt="Sally, maskot och följeslagare för Annas VardagsGlädje AB."
+                  alt="Hund som följeslagare – värme och närhet i vardagen"
                   placeholder="blur"
                   priority
                   sizes="(max-width: 768px) 100vw, 45vw"
@@ -67,13 +68,13 @@ export default function Home() {
                 />
               </div>
               <p className="mt-3 text-center text-sm text-[#6a7a72]">
-                Sally påminner oss om värme, närhet och glädje i varje möte.
+                En trogen följeslagare påminner om värme, närhet och glädje i varje
+                möte.
               </p>
             </div>
           </div>
         </section>
 
-        {/* För vem */}
         <section id="for-vem" className="py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-6 md:px-10">
             <SectionHeading
@@ -89,23 +90,21 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Verksamhetsområde */}
         <section className="bg-[#eef4ef] py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-6 text-center md:px-10">
             <SectionHeading
               eyebrow="Verksamhetsområde"
-              title="Utgångsort Klippan – vi arbetar i hela Skåne"
+              title="Vi arbetar i hela Skåne"
               centered
             />
             <p className="mx-auto mt-4 max-w-2xl text-lg text-[#5a6a62]">
-              Med utgångspunkt i Klippan erbjuder vi ledsagning och sällskap i
-              hela Skåne – till exempel Helsingborg, Ängelholm, Höör och
-              närliggande orter, beroende på dag och uppdrag.
+              Vi erbjuder ledsagning och sällskap i Skåne – till exempel
+              Helsingborg, Lund, Ängelholm och närliggande orter, beroende på dag
+              och uppdrag.
             </p>
           </div>
         </section>
 
-        {/* Så kommer du igång */}
         <section className="py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-6 md:px-10">
             <SectionHeading
@@ -131,7 +130,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Tjänster */}
         <section id="tjanster" className="bg-white py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-6 md:px-10">
             <SectionHeading
@@ -161,7 +159,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Aktiviteter */}
         <section id="aktiviteter" className="py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-6 md:px-10">
             <SectionHeading
@@ -169,8 +166,8 @@ export default function Home() {
               title="Exempel på vad vi kan göra tillsammans"
             />
             <p className="mt-4 max-w-3xl text-[#5a6a62]">
-              Här är exempel från Annas material – vi anpassar alltid efter
-              dina önskemål och dagsform.
+              Här är exempel på aktiviteter – vi anpassar alltid efter dina
+              önskemål och dagsform.
             </p>
 
             <div className="mt-10 grid gap-8 lg:grid-cols-2">
@@ -188,16 +185,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Om oss */}
         <section id="om-oss" className="bg-[#f3eee8] py-16 md:py-20">
           <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2 md:px-10">
             <div>
               <SectionHeading eyebrow="Om oss" title="Varför vi finns" />
               <p className="mt-6 leading-relaxed text-[#5a6a62]">
-                Annas VardagsGlädje AB startades med önskan om att skapa mer
-                glädje, gemenskap och meningsfulla stunder i vardagen i Skåne.
-                Vi tror på ett respektfullt och lugnt sätt att mötas – där du
-                känner dig sedd, trygg och delaktig.
+                {siteConfig.name} finns för att skapa mer glädje, gemenskap och
+                meningsfulla stunder i vardagen i Skåne. Vi tror på ett
+                respektfullt och lugnt sätt att mötas – där du känner dig sedd,
+                trygg och delaktig.
               </p>
               <p className="mt-4 leading-relaxed text-[#5a6a62]">
                 Vi arbetar med omtanke, tydlighet och en varm ton. Fakturering
@@ -205,31 +201,20 @@ export default function Home() {
               </p>
             </div>
             <div className="flex items-center justify-center">
-              <BrandLogo
-                size="lg"
-                surfaceClassName="bg-[#f3eee8]"
-                alt="Annas VardagsGlädje AB logotyp"
-              />
+              <BrandLogo size="lg" surfaceClassName="bg-[#f3eee8] p-2" />
             </div>
           </div>
         </section>
 
-        {/* Kontakt */}
         <section id="kontakt" className="py-16 md:py-20">
           <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2 md:px-10">
             <div>
               <SectionHeading eyebrow="Kontakt" title="Hör av dig – vi återkommer snart" />
               <p className="mt-4 leading-relaxed text-[#5a6a62]">
-                Fyll i formuläret så hör vi av oss för ett första samtal. Du
-                kan också ringa eller mejla direkt.
+                Fyll i formuläret så hör vi av oss för ett första samtal. Du kan
+                också mejla direkt.
               </p>
               <ul className="mt-6 space-y-3 text-[#4a5a52]">
-                <li>
-                  Telefon:{" "}
-                  <a href={contact.phoneHref} className="font-medium underline">
-                    {contact.phone}
-                  </a>
-                </li>
                 <li>
                   E-post:{" "}
                   <a href={`mailto:${contact.email}`} className="font-medium underline">
