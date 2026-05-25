@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
 export function ContactForm() {
   const router = useRouter();
   const [error, setError] = useState(false);
@@ -13,13 +15,27 @@ export function ContactForm() {
     setError(false);
     setSending(true);
 
+    if (!accessKey) {
+      setError(true);
+      setSending(false);
+      return;
+    }
+
+    const form = event.currentTarget;
+    const body = new FormData(form);
+    body.append("access_key", accessKey);
+    body.append("subject", "Ny förfrågan – Trygg Vardag Skåne");
+    body.append("from_name", "Trygg Vardag Skåne – kontaktformulär");
+
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: new FormData(event.currentTarget),
+        body,
       });
 
-      if (response.ok) {
+      const data = (await response.json()) as { success: boolean };
+
+      if (data.success) {
         router.push("/tack");
         return;
       }
@@ -96,8 +112,8 @@ export function ContactForm() {
 
       {error ? (
         <p className="text-sm text-red-700" role="alert">
-          Något gick fel. Kontrollera att formuläret är konfigurerat i Netlify, eller
-          försök igen om en stund.
+          Något gick fel. Kontrollera att NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY finns i
+          Netlify och att du deployat om efter det.
         </p>
       ) : null}
 

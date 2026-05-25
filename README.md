@@ -21,10 +21,12 @@ https://trygg-vardag-skane.netlify.app
 
 1. **https://app.netlify.com/projects/trygg-vardag-skane/configuration/env**
 2. **Add a variable**
-   - Key: `WEB3FORMS_ACCESS_KEY`
+   - Key: `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`
    - Value: (klistra in access key)
    - Scopes: alla (Production)
 3. **Save** → gå till **Deploys** → **Trigger deploy** → **Deploy site**
+
+(Web3Forms gratis kräver **klient**-anrop — inte server. Nyckeln syns i sidans JS, det är normalt för Web3Forms.)
 
 ### Steg 3 – testa
 
