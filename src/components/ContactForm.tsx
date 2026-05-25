@@ -3,10 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-/**
- * Next.js fångar annars POST till /tack utan att Netlify registrerar formuläret.
- * Officiellt mönster: POST som urlencoded till /, sedan redirect till /tack.
- */
 export function ContactForm() {
   const router = useRouter();
   const [error, setError] = useState(false);
@@ -17,18 +13,10 @@ export function ContactForm() {
     setError(false);
     setSending(true);
 
-    const form = event.currentTarget;
-    const params = new URLSearchParams();
-    for (const [key, value] of new FormData(form).entries()) {
-      params.append(key, typeof value === "string" ? value : value.name);
-    }
-    const body = params.toString();
-
     try {
-      const response = await fetch("/", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body,
+        body: new FormData(event.currentTarget),
       });
 
       if (response.ok) {
@@ -44,16 +32,7 @@ export function ContactForm() {
   }
 
   return (
-    <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}
-      className="space-y-4"
-    >
-      <input type="hidden" name="form-name" value="contact" />
-
+    <form onSubmit={handleSubmit} className="space-y-4">
       <p className="hidden" aria-hidden="true">
         <label>
           Fyll inte i detta fält:{" "}
@@ -117,7 +96,8 @@ export function ContactForm() {
 
       {error ? (
         <p className="text-sm text-red-700" role="alert">
-          Något gick fel. Försök igen om en stund eller ladda om sidan.
+          Något gick fel. Kontrollera att formuläret är konfigurerat i Netlify, eller
+          försök igen om en stund.
         </p>
       ) : null}
 

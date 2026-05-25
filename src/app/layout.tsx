@@ -81,22 +81,7 @@ export default function RootLayout({
       lang="sv"
       className={`${cormorant.variable} ${sourceSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        {/* Netlify registrerar formuläret vid build – visas inte för besökare */}
-        <form
-          name="contact"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          hidden
-        >
-          <input type="hidden" name="form-name" value="contact" />
-          <input type="text" name="name" />
-          <input type="email" name="email" />
-          <input type="tel" name="phone" />
-          <textarea name="message" />
-        </form>
-        {children}
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
